@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Product Maintenance";
+}
+<script src="~/Scripts/ProductClient.js"></script>
+<div ng-app="ProductApp" class="container">
+    <br />
+    <br />
+    <input type="text" placeholder="Search UPC" ng-model="searchProduct" />
+    <br />
+    <div ng-controller="HomeController">
+        <table class="table">
+            <tr ng-repeat="r in products | filter : searchProduct">
+                <td>{{r.upc}}</td>
+                <td>{{r.description}}</td>
+                <td>{{r.price}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
